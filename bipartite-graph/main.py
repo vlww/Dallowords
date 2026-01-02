@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from nltk.corpus import stopwords
 
 # dont even need this anymore lol
-#nltk.download('stopwords') 
+# nltk.download('stopwords') 
 stop_words = set(stopwords.words('english'))
 
 
