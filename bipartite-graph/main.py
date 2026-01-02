@@ -66,9 +66,13 @@ for character, names in character_aliases.items():
 
 #print data to console
 for character, word_counts in word_occurrences.items():
-    print(f"{character}:")
+    total_sentences = character_sentence_counts.get(character, 1)
+    print(f"{character} (total sentences: {total_sentences}):")
+
     for word, count in word_counts.items():
-        print(f"  {word}: {count}")
+        percentage = (count / total_sentences) * 100 if total_sentences > 0 else 0
+        print(f"  {word}: {count} ({percentage:.2f}%)")
+
     print()
 
 df_matrix = pd.DataFrame(word_occurrences).T.fillna(0)
